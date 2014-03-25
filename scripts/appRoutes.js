@@ -4,11 +4,13 @@ define([], function()
         defaultRoutePath: '/',
 
         defaultDependencies: [
+             'directive/panel',
+             'controller/PageController'
         ],
 
         routes: {
             '/index': {
-                templateUrl: 'login.html',
+                templateUrl: 'index.html',
                 dependencies: [
                 ]
             }

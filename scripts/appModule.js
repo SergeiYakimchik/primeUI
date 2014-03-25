@@ -1,5 +1,5 @@
 define(["appRoutes", "service/lazyDependencyResolver"], function (config, lazyDependencyResolver) {
-    var Prime = angular.module("Prime", []);
+    var Prime = angular.module("Prime", ['angular.prime']);
     
     Prime.server = "http://localhost:8080/web-service/";
     
@@ -21,7 +21,6 @@ define(["appRoutes", "service/lazyDependencyResolver"], function (config, lazyDe
             
             $httpProvider.defaults.useXDomain = true;
             delete $httpProvider.defaults.headers.common["X-Requested-With"];
-            
             angular.forEach(config.routes, function(route, path)
                     {
                         $routeProvider.when(
