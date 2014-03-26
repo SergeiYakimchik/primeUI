@@ -1,13 +1,20 @@
-define(['appModule'], function(Prime)
+define(['appModule'], function(app)
 {
-	Prime.lazy.service('OrderService', 
+	app.lazy.service('OrderService', 
 	[
-	 	'',
+	 	'$http',
 	 	
-	 	function(){
-	 		
-	 		
+	 	function($http){
 	 	
+	 		var send = function() {
+	 			
+			};
+			
+	 		return {
+	 			send : function() {
+	 				return send();
+	 			}
+	 		};		
 	 	}
 	]);
 });

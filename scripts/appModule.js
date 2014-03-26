@@ -1,9 +1,9 @@
 define(["appRoutes", "service/lazyDependencyResolver"], function (config, lazyDependencyResolver) {
-    var Prime = angular.module("Prime", ['angular.prime']);
+    var app = angular.module("app", ['ngRoute', 'angular.prime']);
     
-    Prime.server = "http://localhost:8080/web-service/";
+    app.server = "http://localhost:8080/web-service/";
     
-    Prime.config(["$routeProvider", 
+    app.config(["$routeProvider", 
               "$locationProvider", 
               "$controllerProvider", 
               "$compileProvider", 
@@ -11,13 +11,13 @@ define(["appRoutes", "service/lazyDependencyResolver"], function (config, lazyDe
               "$provide", 
               "$httpProvider",
         function ($routeProvider, $locationProvider, $controllerProvider, $compileProvider, $filterProvider, $provide, $httpProvider) {
-            Prime.lazy = {};
+    		app.lazy = {};
             
-            Prime.lazy.controller = $controllerProvider.register;
-            Prime.lazy.directive  = $compileProvider.directive;
-            Prime.lazy.filter     = $filterProvider.register;
-            Prime.lazy.factory    = $provide.factory;
-            Prime.lazy.service    = $provide.service;
+    		app.lazy.controller = $controllerProvider.register;
+    		app.lazy.directive  = $compileProvider.directive;
+    		app.lazy.filter     = $filterProvider.register;
+    		app.lazy.factory    = $provide.factory;
+    		app.lazy.service    = $provide.service;
             
             $httpProvider.defaults.useXDomain = true;
             delete $httpProvider.defaults.headers.common["X-Requested-With"];
@@ -32,8 +32,8 @@ define(["appRoutes", "service/lazyDependencyResolver"], function (config, lazyDe
                         )
                     });
 
-            $routeProvider.otherwise({redirectTo: '/index'});
+            $routeProvider.otherwise({redirectTo: '/vacation'});
         }
     ]);
-    return Prime
+    return app
 })

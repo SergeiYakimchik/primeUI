@@ -1,19 +1,20 @@
-define([], function()
-{
+define([], function () {
     return {
-        defaultRoutePath: '/',
-
+        defaultRoutePath: "/",
         defaultDependencies: [
-             'directive/panel',
-             'controller/PageController'
-        ],
-
+                              'directive/panel',
+                              "controller/PageController"
+                              ],
         routes: {
-            '/index': {
-                templateUrl: 'index.html',
+            "/vacation": {
+                templateUrl: "views/vacation.html",
                 dependencies: [
-                ]
+                               ]
+            },
+            "/about": {
+                templateUrl: "views/about.html",
+                dependencies: []
             }
         }
-    };
-});
+    }
+})

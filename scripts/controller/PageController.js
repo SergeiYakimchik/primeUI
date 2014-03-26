@@ -1,6 +1,6 @@
-define(['appModule'], function(Prime)
+define(['appModule'], function(app)
 {
-	Prime.lazy.controller('MainController', 
+	app.lazy.controller('PageController', 
 	[
 	 	'$scope',
 
