@@ -1,6 +1,6 @@
 define(['appModule'], function(Prime)
 {
-	Prime.lazy.directive('puiPanel', 
+	Prime.lazy.directive('puiButton', 
 	[
 	 	function(){
 	 		
@@ -11,7 +11,7 @@ define(['appModule'], function(Prime)
 
 	 	        compile: function (element, attrs, transclude) {
 	 	            $(function () {
-	 	                element.puipanel();
+	 	                element.puibutton();
 	 	            });
 	 	        }
 	 	    };

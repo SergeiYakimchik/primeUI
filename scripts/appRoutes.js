@@ -2,8 +2,13 @@ define([], function () {
     return {
         defaultRoutePath: "/",
         defaultDependencies: [
+                              'directive/accordion',
+                              'directive/button',
+                              'directive/inputtext',
+                              'directive/menubar',
                               'directive/panel',
-                              "controller/PageController"
+                              'directive/table',
+                              'controller/PageController'
                               ],
         routes: {
             "/vacation": {

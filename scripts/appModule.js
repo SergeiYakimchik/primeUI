@@ -21,6 +21,7 @@ define(["appRoutes", "service/lazyDependencyResolver"], function (config, lazyDe
             
             $httpProvider.defaults.useXDomain = true;
             delete $httpProvider.defaults.headers.common["X-Requested-With"];
+            
             angular.forEach(config.routes, function(route, path)
                     {
                         $routeProvider.when(
